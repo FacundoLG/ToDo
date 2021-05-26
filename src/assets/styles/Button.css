@@ -1,0 +1,14 @@
+.button {
+  border-radius: 10px;
+  border: none;
+  width: 26%;
+  max-width: 120px;
+  padding: 0px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+}
+.add {
+  background: rgb(61, 173, 247);
+  box-shadow: 1px 2px 3px 1px rgba(124, 203, 255, 0.5);
+}

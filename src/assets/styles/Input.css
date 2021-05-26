@@ -1,0 +1,17 @@
+.inputContainer {
+  display: flex;
+  justify-content: left;
+  margin: 20px auto;
+  max-width: 600px;
+}
+.taskInput {
+  display: inline-block;
+  width: 70%;
+  border-radius: 10px;
+  height: 45px;
+  margin-right: 10px;
+  max-width: 500px;
+  border: solid rgb(175, 175, 175) 1px;
+  outline: none;
+  padding: 0px 10px;
+}
