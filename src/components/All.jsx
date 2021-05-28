@@ -6,6 +6,7 @@ import Task from './Task'
 import data from '../helpers/tasks.json'
 
 var allData= data.All
+var lastTodo
 const All = () =>{
     const [tasks,setTasks] = useState(allData)
    
@@ -16,12 +17,20 @@ const All = () =>{
         return newTask
     }
     
-    const addTask =(todo) =>{
-        todo = getNewTask()
-        const newTasks = [todo,...allData]
+    const addTask =() =>{
+        var todo = getNewTask()
+        todo.replace()
+        if(todo !== lastTodo && todo !== " " && todo !== ""){
+            lastTodo = todo
+            const newTasks = [todo,...allData]
+            allData = newTasks
+            setTasks(newTasks)
+        }
+    }
+    const removeTask = (id) =>{
+        const newTasks = [...allData].filter(todo => todo.id !== id)
         allData = newTasks
         setTasks(newTasks)
-        console.log(allData)
     }
     return(
         <div className="container">
@@ -30,8 +39,7 @@ const All = () =>{
                 <button className="button add" onClick={addTask}>add</button>
             </div>
             <div>
-                {tasks.map((taskText,index)=> <Task key={index+taskText} taskText={taskText} index={index}/>)}
-            </div>
+                {tasks.map((taskText,index)=><Task key={index} index={index} taskText={taskText} deleteClick={(index) => removeTask(index)}/>)}</div>
         </div>
     )
 }

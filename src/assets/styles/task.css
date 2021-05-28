@@ -1,12 +1,30 @@
 .taskContainer {
   display: flex;
-  background: wheat;
+  justify-content: space-between;
+  background: rgb(61, 173, 247);
   align-items: center;
-  margin: 10px 0px;
+  margin: 6px 0px;
   border-radius: 5px;
   padding: 10px 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+.left {
+  display: flex;
+  background: none;
 }
 .taskContainer p {
   background: none;
   margin: 0px 0px;
+}
+.icon {
+  background: none;
+  margin: 0px 5px;
+}
+.red {
+  color: rgb(245, 15, 15);
+}
+.red:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
