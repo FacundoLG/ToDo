@@ -3,19 +3,25 @@ import Input from './Input'
 import Task from './Task'
 import '../assets/styles/All.css'
 import data from '../helpers/tasks.json'
-const All = () =>{
-    var allData = data.All
+class All extends React.Component{
+    state ={
+        datos: data.All
+    }
+    refreshData(){
+     
+    }
+    tasks = this.state.datos.map((text,index) => <Task index={index} key={index+text} taskText={text}/>)
+    render(){
     return(
         <div className="container">
             <div>
-                {/* Input */}
-                <Input onClick={All}/>
+                <Input onClick={this.refreshData}/>
             </div>
             <div>
-               {allData.map((n,index) => <Task index={index} key={index+n} taskText={n}/>)}
+            { this.tasks}
             </div>
         </div>
-    )
+    )}
 }
 
 export default All

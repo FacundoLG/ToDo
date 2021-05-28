@@ -12,3 +12,10 @@
   background: rgb(61, 173, 247);
   box-shadow: 1px 2px 3px 1px rgba(124, 203, 255, 0.5);
 }
+.button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.button:active {
+  background: rgb(47, 143, 206);
+}
