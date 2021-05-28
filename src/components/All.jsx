@@ -1,27 +1,38 @@
-import React from 'react';
-import Input from './Input'
-import Task from './Task'
+import React,{useState} from 'react';
 import '../assets/styles/All.css'
+import '../assets/styles/Button.css'
+import '../assets/styles/Input.css'
+import Task from './Task'
 import data from '../helpers/tasks.json'
-class All extends React.Component{
-    state ={
-        datos: data.All
+
+var allData= data.All
+const All = () =>{
+    const [tasks,setTasks] = useState(allData)
+   
+   
+    const getNewTask = () =>{
+        var newTask = document.getElementById("allInput").value
+        console.log(newTask)
+        return newTask
     }
-    refreshData(){
-     
+    
+    const addTask =(todo) =>{
+        todo = getNewTask()
+        const newTasks = [todo,...allData]
+        allData = newTasks
+        setTasks(newTasks)
+        console.log(allData)
     }
-    tasks = this.state.datos.map((text,index) => <Task index={index} key={index+text} taskText={text}/>)
-    render(){
     return(
         <div className="container">
-            <div>
-                <Input onClick={this.refreshData}/>
+            <div className="inputContainer">
+                <input className="taskInput" id="allInput"type="text" />
+                <button className="button add" onClick={addTask}>add</button>
             </div>
             <div>
-            { this.tasks}
+                {tasks.map((taskText,index)=> <Task key={index+taskText} taskText={taskText} index={index}/>)}
             </div>
         </div>
-    )}
+    )
 }
-
 export default All
