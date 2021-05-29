@@ -2,6 +2,7 @@
   display: flex;
   justify-content: left;
   margin: 20px auto;
+  height: 45px;
   max-width: 600px;
 }
 .taskInput {
@@ -14,4 +15,9 @@
   border: solid rgb(175, 175, 175) 1px;
   outline: none;
   padding: 0px 10px;
+}
+.right {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }

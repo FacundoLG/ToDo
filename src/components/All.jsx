@@ -3,12 +3,12 @@ import Task from './Task'
 import data from '../helpers/tasks.json'
 
 var allData= data.All
-var lastTodo
 const All = () =>{
     const [tasks,setTasks] = useState(allData)
    
     const getNewTask = () =>{
         var newTask = document.getElementById("allInput").value
+        document.getElementById("allInput").value = ""
         return newTask
     }
     
@@ -16,9 +16,7 @@ const All = () =>{
         var todo = getNewTask()
         todo.replace()
         todo = todo.charAt(0).toUpperCase() + todo.slice(1) //first char to UpperCase
-        if(todo !== lastTodo && todo !== " " && todo !== ""){
-            lastTodo = todo
-            
+        if(todo !== " " && todo !== ""){
             todo = {
                 id: Math.floor(Math.random()*10000),
                 value: todo,

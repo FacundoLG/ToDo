@@ -12,8 +12,10 @@ const Active = () => {
         console.log(data.Active)
     }
     
-    const passState = () => {
-        
+    const passState = (id) => {
+        const toPassTasks = [...data.Active].filter(todo => todo.id === id)
+        data.Completed = [toPassTasks[0],...data.Completed]
+        removeTask(id)
     }
 
 
@@ -23,7 +25,7 @@ const Active = () => {
                 {tasks.map((todo,index)=><Task key={index+todo.id} 
                                                taskText={todo.value}
                                                deleteClick={removeTask}
-                                               //passClick={passState}
+                                               passClick={passState}
                                                todos={activeData[index]}/>)}</div>
         </div>
     )

@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {BsFillCircleFill, BsXCircle, BsArrowRight} from "react-icons/bs"
 import '../assets/styles/task.css'
 const Task = (props) =>{
-    const {todos,taskText, deleteClick, passClick} = props 
-   
+    const {todos,taskText, deleteClick, passClick, isComplete} = props 
+    const [complete, setComplete] = useState(!isComplete)
+
+    
     return(
         <div className="taskContainer">
             <div className="left">
@@ -12,7 +14,7 @@ const Task = (props) =>{
             </div>
             <div className="left">
                 <BsXCircle onClick={() => {deleteClick(todos.id)}} className="icon red"/>
-                <BsArrowRight onClick={() => {passClick(todos.id)}} className="icon orange"/>
+                {complete ? <BsArrowRight onClick={() => {passClick(todos.id)}} className="icon orange"/>:""}
             </div>
         </div>
     )
