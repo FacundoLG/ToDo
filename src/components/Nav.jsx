@@ -1,10 +1,8 @@
-import React,{useState} from 'react';
+import React from 'react';
 import '../assets/styles/Nav.css'
 
 const Nav = (props) =>{
-    const {setTab, ide} = props
-    const [theTab,setTheTab] = useState("Active")
-    console.log(ide)
+    const {setTab} = props
     const setInactive = (id) =>{
         document.getElementById(id).style.borderBottom = "solid rgba(163, 163, 163, 0) 2px"
     }

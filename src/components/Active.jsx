@@ -10,7 +10,7 @@ const Active = () => {
     return(
         <div className="container">
             <div className="inputContainer">
-                <input className="taskInput" id="allInput"type="text" />
+                <input className="taskInput" id="activeInput"type="text" />
                 <button className="button add" onClick={addTask}>add</button>
             </div>
             <div>
