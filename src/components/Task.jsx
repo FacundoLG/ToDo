@@ -1,12 +1,9 @@
 import React from 'react';
-import {BsFillCircleFill, BsFillXCircleFill} from "react-icons/bs"
+import {BsFillCircleFill, BsXCircle} from "react-icons/bs"
 import '../assets/styles/task.css'
 const Task = (props) =>{
-    const {taskText, deleteClick, index} = props 
-    const clcik = () =>{
-        deleteClick(index)
-
-    }
+    const {todos,taskText, deleteClick} = props 
+    console.log(todos)
     return(
         <div className="taskContainer">
             <div className="left">
@@ -14,7 +11,7 @@ const Task = (props) =>{
                 <p>{taskText}</p>
             </div>
             <div className="left">
-                <BsFillXCircleFill onClick={clcik}className="icon red"/>
+                <BsXCircle onClick={() => {deleteClick(todos.id)}} className="icon red"/>
             </div>
         </div>
     )
