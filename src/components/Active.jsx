@@ -1,22 +1,30 @@
 import React,{useState} from 'react';
 import Task from './Task'
 import data from '../helpers/tasks.json'
-var allData = data.All
-var lastTodo
 const Active = () => {
-    const [tasks,setTasks] = useState(allData)
-    const addTask = () => {}  
+    var activeData = data.Active
+    const [tasks,setTasks] = useState(activeData)
+    
+    const removeTask = (ide) =>{
+        const newTasks = [...data.Active].filter(todo => todo.id !== ide)
+        data.Active = newTasks
+        setTasks(data.Active)
+        console.log(data.Active)
+    }
+    
+    const passState = () => {
+        
+    }
+
 
     return(
-        <div className="container">
-            <div className="inputContainer">
-                <input className="taskInput" id="activeInput"type="text" />
-                <button className="button add" onClick={addTask}>add</button>
-            </div>
+        <div className="container noInput">
             <div>
                 {tasks.map((todo,index)=><Task key={index+todo.id} 
-                                               taskText={todo.value} 
-                                               todos={allData[index]}/>)}</div>
+                                               taskText={todo.value}
+                                               deleteClick={removeTask}
+                                               //passClick={passState}
+                                               todos={activeData[index]}/>)}</div>
         </div>
     )
 }

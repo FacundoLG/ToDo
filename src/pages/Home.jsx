@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Nav from '../components/Nav'
 import All from '../components/All';
 import Active from '../components/Active';
+import Completed from '../components/Completed';
 import '../assets/styles/All.css'
 import '../assets/styles/Button.css'
 import '../assets/styles/Input.css'
@@ -11,7 +12,6 @@ const Home = () => {
 
     const getTab = (tabid) => {
         setTab(tabid)
-        console.log(tabid)
     }
     
     return(
@@ -19,6 +19,7 @@ const Home = () => {
             <Nav setTab={getTab} />
             {tab === "All" ? <All/> : ""}
             {tab === "Active" ? <Active/>: ""}
+            {tab === "Completed" ? <Completed/> : ""}
         </div>
     )
 }

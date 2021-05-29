@@ -9,7 +9,6 @@ const All = () =>{
    
     const getNewTask = () =>{
         var newTask = document.getElementById("allInput").value
-        console.log(newTask)
         return newTask
     }
     
@@ -19,22 +18,27 @@ const All = () =>{
         todo = todo.charAt(0).toUpperCase() + todo.slice(1) //first char to UpperCase
         if(todo !== lastTodo && todo !== " " && todo !== ""){
             lastTodo = todo
+            
             todo = {
                 id: Math.floor(Math.random()*10000),
-                value: todo
+                value: todo,
             }
             const newTasks = [todo,...allData]
             allData = newTasks
-            console.log(newTasks)
             setTasks(newTasks)
         }
     }
-    const removeTask = (ide) =>{
-        console.log(ide)
-        const newTasks = [...allData].filter(todo => todo.id !== ide)
-        console.log(newTasks)
+    const removeTask = (id) =>{
+        const newTasks = [...allData].filter(todo => todo.id !== id)
         allData = newTasks
         setTasks(newTasks)
+    }
+    const passState = (id) =>{
+        const toPassTasks = [...allData].filter(todo => todo.id === id)
+        data.Active = [toPassTasks[0],...data.Active]
+        console.log(data.Active)
+        removeTask(id)
+
     }
     return(
         <div className="container">
@@ -46,6 +50,7 @@ const All = () =>{
                 {tasks.map((todo,index)=><Task key={index+todo.id} 
                                                taskText={todo.value} 
                                                deleteClick={removeTask}
+                                               passClick={passState}
                                                todos={allData[index]}/>)}</div>
         </div>
     )

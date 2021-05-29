@@ -26,7 +26,14 @@
 .red {
   color: rgb(245, 15, 15);
 }
+.orange {
+  color: rgb(255, 99, 27);
+}
 .red:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.orange:hover {
   opacity: 0.8;
   cursor: pointer;
 }
