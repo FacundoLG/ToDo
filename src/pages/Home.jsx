@@ -6,6 +6,7 @@ import Completed from '../components/Completed';
 import '../assets/styles/All.css'
 import '../assets/styles/Button.css'
 import '../assets/styles/Input.css'
+import '../assets/styles/task.css'
 let actualTab = "All"
 const Home = () => {
     const [tab, setTab] = useState(actualTab)

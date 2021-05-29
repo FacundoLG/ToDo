@@ -1,7 +1,7 @@
 .taskContainer {
   display: flex;
   justify-content: space-between;
-  background: rgb(61, 173, 247);
+  background: #006466;
   align-items: center;
   margin: 6px 0px;
   border-radius: 5px;
@@ -19,21 +19,21 @@
   margin: 0px 0px;
 }
 .icon {
-  font-size: 21px;
+  font-size: 20px;
   background: none;
   margin: 0px 5px;
-}
-.red {
-  color: rgb(245, 15, 15);
+  color: #ffffff;
 }
 .orange {
-  color: rgb(255, 99, 27);
+  color: #fff;
 }
 .red:hover {
-  opacity: 0.8;
+  color: #ba181b;
+  opacity: 1;
   cursor: pointer;
 }
 .orange:hover {
-  opacity: 0.8;
+  color: #45cb85;
+  opacity: 1;
   cursor: pointer;
 }

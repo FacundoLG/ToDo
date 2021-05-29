@@ -9,17 +9,17 @@
   font-size: 15px;
 }
 .add {
-  background: rgb(61, 173, 247);
-  box-shadow: 1px 2px 3px 1px rgba(124, 203, 255, 0.5);
+  background: #006466;
+  box-shadow: 1px 2px 3px 1px 272640;
 }
 .delete {
-  background: rgb(247, 61, 61);
-  box-shadow: 1px 2px 3px 1px rgba(255, 124, 124, 0.5);
+  background: #3e1f47;
+  box-shadow: 1px 2px 3px 1px #3e1f47;
 }
 .button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 .button:active {
-  background: rgb(47, 143, 206);
+  opacity: 1;
 }

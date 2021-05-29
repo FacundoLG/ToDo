@@ -11,7 +11,7 @@ const Nav = (props) =>{
             setInactive("All")
             setInactive("Active")
             setInactive("Completed")
-            document.getElementById(id).style.borderBottom = "2px rgb(0, 153, 255) solid"
+            document.getElementById(id).style.borderBottom = "2px #006466 solid"
         }
         setTab(id)
     }
