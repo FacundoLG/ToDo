@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
-import {BsFillCircleFill, BsXCircle, BsArrowRight} from "react-icons/bs"
+import React from 'react';
+import { BsXCircle, BsArrowRight} from "react-icons/bs"
 import '../assets/styles/task.css'
 const Task = (props) =>{
     const {todos,taskText, deleteClick, passClick, isComplete} = props 
-    const [complete, setComplete] = useState(!isComplete)
+    var complete = !isComplete
 
    
     
@@ -11,7 +11,6 @@ const Task = (props) =>{
     return(
         <div className="taskContainer">
             <div className="left">
-                <BsFillCircleFill className="icon"/>
                 <p>{taskText}</p>
             </div>
             <div className="left">

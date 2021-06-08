@@ -9,12 +9,10 @@
   font-size: 15px;
 }
 .add {
-  background: #006466;
-  box-shadow: 1px 2px 3px 1px 272640;
+  background: #ef233c;
 }
 .delete {
   background: #3e1f47;
-  box-shadow: 1px 2px 3px 1px #3e1f47;
 }
 .button:hover {
   opacity: 0.8;
