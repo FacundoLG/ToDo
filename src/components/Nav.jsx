@@ -20,7 +20,7 @@ const Nav = (props) =>{
         <div className="navContainer">
             <h2 className="title">#todo</h2>
             <div className="nav">
-                <button className="tabs" id="All" onClick={(e) => {toTab(e.target.id)}}>All</button>
+                <button className="tabs" id="All" onClick={(e) => {toTab(e.target.id)}}>Unassigned</button>
                 <button className="tabs" id="Active" onClick={(e) => {toTab(e.target.id)}}>Active</button>
                 <button className="tabs" id="Completed" onClick={(e) =>{ toTab(e.target.id)}}>Completed</button>
             </div>

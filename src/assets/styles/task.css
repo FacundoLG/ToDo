@@ -1,7 +1,7 @@
 .taskContainer {
   display: flex;
   justify-content: space-between;
-  background: #d90429;
+  background: #003049;
   align-items: center;
   margin: 6px 0px;
   border-radius: 5px;
@@ -21,6 +21,7 @@
   margin: 0px 0px;
 }
 .icon {
+  position: relative;
   display: none;
   font-size: 21px;
   background: none;
@@ -30,16 +31,16 @@
 .taskContainer:hover .icon {
   display: flex;
 }
-.orange {
-  color: #fff;
-}
-.red:hover {
-  color: #ffd83a;
-  opacity: 1;
+.xcircle:hover {
+  transform: rotate(25deg);
   cursor: pointer;
+  transition: 200ms;
 }
-.orange:hover {
-  color: #43ff9e;
-  opacity: 1;
+.arrow:hover {
   cursor: pointer;
+  transform: translate(5px, 0);
+  transition: 200ms;
+}
+.taskImportant {
+  background: #ef233c;
 }
